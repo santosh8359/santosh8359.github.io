@@ -1,273 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Biswaranjan Bal - DevOps Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <title>Biswaranjan Bal - DevOps Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #0d1117;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d0d0d;
       color: white;
-      overflow-x: hidden;
-    }
-    header {
-      background: #161b22;
-      padding: 20px 60px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
     }
-    header h1 {
-      color: #f43f5e;
-      font-weight: 600;
-    }
-    nav a {
-      color: white;
-      margin: 0 20px;
-      text-decoration: none;
-      font-weight: 300;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #f43f5e;
-    }
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .sidebar {
+      width: 220px;
       height: 100vh;
-      padding: 100px 60px 0 60px;
-      background: linear-gradient(135deg, #0d1117 50%, #161b22 100%);
+      background-color: #121212;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      position: fixed;
     }
-    .hero-text {
-      max-width: 600px;
+    .sidebar img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 30px;
     }
-    .hero h2 {
-      font-size: 3rem;
+    .sidebar nav a {
       color: white;
+      text-decoration: none;
+      margin: 15px 0;
+      font-size: 18px;
+      transition: 0.3s;
     }
-    .hero h2 span {
+    .sidebar nav a:hover {
       color: #f43f5e;
     }
-    .hero h3 {
-      font-size: 2rem;
-      margin: 15px 0;
-      color: #58a6ff;
+    .main-content {
+      margin-left: 240px;
+      padding: 40px;
+      width: calc(100% - 240px);
     }
-    .hero p {
-      font-size: 1.1rem;
-      margin-top: 10px;
-      color: #c9d1d9;
+    .section {
+      margin-bottom: 60px;
     }
+    .hero h1 { font-size: 2.8rem; }
+    .hero h1 span { color: #f43f5e; }
+    .hero h2 { color: #3b82f6; margin: 10px 0; }
+    .hero p { color: #cfcfcf; max-width: 500px; }
     .btn {
+      padding: 10px 20px;
+      background-color: #f43f5e;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .skills-icons {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .skills-icons img {
+      width: 50px;
+      background-color: #1e1e1e;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .project-box {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .project-box a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      background: #1e1e1e;
+      color: white;
+    }
+    form button {
       background: #f43f5e;
       color: white;
-      padding: 12px 25px;
-      margin-top: 25px;
       border: none;
-      border-radius: 30px;
+      padding: 10px 20px;
+      border-radius: 5px;
       cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #e11d48;
-    }
-    .hero img {
-      border-radius: 20px;
-      max-width: 350px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #161b22;
-      color: #8b949e;
-      font-size: 0.9rem;
-    }
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 120px 20px 40px;
-      }
-      .hero img {
-        margin-top: 30px;
-      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Biswaranjan</h1>
-      <nav>
-  <a href="#">Home</a>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
-  </header>
+  <div class="sidebar">
+    <img src="IMG_20191012_082410_045.jpg" alt="Biswaranjan Profile Photo">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Hi, I'm <span>Biswaranjan Bal</span></h2>
-      <h3><h3 style="color: #58a6ff; font-size: 1.2rem;">
-  Passionate DevOps Engineer | AWS | Docker | CI/CD | Ansible
-</h3>
-</h3>
-      <a href="mailto:santoshbal453218@gmail.com"><button class="btn"><p>I design and automate scalable infrastructure with AWS, Docker, Jenkins, and Ansible. I love clean CI/CD pipelines and fast deployments.</p>
+  <div class="main-content">
+    <section class="section hero" id="home">
+      <h1>Hi, I'm <span>Biswaranjan Bal</span></h1>
+      <h2>DevOps Engineer</h2>
+      <p>I design and automate scalable infrastructure and build real-world cloud and CI/CD projects using AWS, Ansible, Docker, and more.</p>
+      <a href="Biswaranjan_Bal_Resume.pdf" download><button class="btn">Download Resume</button></a>
+    </section>
 
-<a href="Biswaranjan-Bal-Resume.pdf" download>
-  <button class="btn" style="margin-right: 10px;">Download Resume</button>
-</a>
+    <section class="section" id="about">
+      <h2>About</h2>
+      <p>I'm Biswaranjan, a passionate DevOps engineer focused on cloud-native solutions using AWS, CI/CD automation, and infrastructure-as-code tools.</p>
+    </section>
 
-<a href="mailto:santoshbal453218@gmail.com">
-  <button class="btn">Contact Me</button>
-</a>
-</button></a>
-    </div>
-    <img src="IMG_20191012_082410_045.jpg" alt="Biswaranjan Profile Photo" />
-  </section>
-<section id="about" style="padding: 80px 60px;">
-  <h2>About Me</h2>
-  <p>I’m Biswaranjan, a passionate DevOps engineer learning and building real-world cloud and CI/CD projects using AWS, Ansible, Docker, and more.</p>
-</section>
+    <section class="section" id="skills">
+      <h2>Skills</h2>
+      <div class="skills-icons">
+        <img src="images/aws.png" alt="AWS">
+        <img src="images/docker.png" alt="Docker">
+        <img src="images/jenkins.png" alt="Jenkins">
+        <img src="images/kubernetes.png" alt="Kubernetes">
+        <img src="images/ansible.png" alt="Ansible">
+      </div>
+    </section>
 
-<section id="skills" style="padding: 80px 60px;">
-  <h2>Skills</h2>
-  <ul>
-  <li><i class="fab fa-aws"></i> AWS (EC2, S3, RDS, VPC)</li>
-  <li><i class="fab fa-docker"></i> Docker & Compose</li>
-  <li><i class="fas fa-cogs"></i> Ansible</li>
-  <li><i class="fab fa-jenkins"></i> Jenkins CI/CD</li>
-  <li><i class="fas fa-terminal"></i> Linux, Shell, Git</li>
-</ul>
+    <section class="section" id="projects">
+      <h2>Projects</h2>
+      <div class="project-box">
+        <h3>Ansible + Docker EC2</h3>
+        <p>Automated deployment of Docker app using Ansible on AWS EC2.</p>
+        <a href="https://github.com/santosh8359/ansible-docker-deploy" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-box">
+        <h3>3-Tier Java eCommerce</h3>
+        <p>Java eCommerce application with frontend, backend and MySQL RDS deployed on AWS with CI/CD pipeline.</p>
+        <a href="https://github.com/santosh8359/3-tier-ecommerce-java" target="_blank">View on GitHub</a>
+      </div>
+    </section>
 
-<section id="contact" style="padding: 80px 60px;">
-  <h2>Contact Me</h2>
-  <p style="margin-top: 20px;">
-    <a href="mailto:santoshbal453218@gmail.com" target="_blank" style="color: white; margin-right: 20px;">
-      <i class="fas fa-envelope fa-2x"></i>
-    </a>
-
-    <a href="https://github.com/santosh8359" target="_blank" style="color: white; margin-right: 20px;">
-      <i class="fab fa-github fa-2x"></i>
-    </a>
-
-    <a href="https://www.linkedin.com/in/biswaranjan-bal-047515246" target="_blank" style="color: white;">
-      <i class="fab fa-linkedin fa-2x"></i>
-    </a>
-  </p>
-</section>
-
-
-<section id="projects" style="padding: 80px 60px;">
-  <h2>Projects</h2>
-
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
-    <div style="background: #161b22; padding: 20px; border-radius: 10px;">
-      <h3 style="color: #58a6ff;"><i class="fab fa-aws"></i> Ansible + Docker EC2</h3>
-      <p>Automated deployment of Docker app using Ansible on AWS EC2.</p>
-      <a href="https://github.com/santosh8359/ansible-docker-deploy" target="_blank" style="color: #f43f5e;">
-        <i class="fab fa-github"></i> View Project
-      </a>
-    </div>
-
-    <div style="background: #161b22; padding: 20px; border-radius: 10px;">
-      <h3 style="color: #58a6ff;"><i class="fab fa-jenkins"></i> Jenkins CI/CD Pipeline</h3>
-      <p>Java app build pipeline using Git, Jenkins, Maven, and Tomcat on EC2.</p>
-      <a href="https://github.com/santosh8359/devops-assessment-deployment" target="_blank" style="color: #f43f5e;">
-  <i class="fab fa-github"></i> View Project
-</a>
-
-
-    <div style="background: #161b22; padding: 20px; border-radius: 10px;">
-      <h3 style="color: #58a6ff;"><i class="fas fa-network-wired"></i> 3-Tier AWS Architecture</h3>
-      <p>Frontend, backend, and RDS DB using EC2, S3, IAM, and VPC.</p>
-      <a href="https://github.com/santosh8359/3-tier-web-application" target="_blank" style="color: #f43f5e;">
-  <i class="fab fa-github"></i> View Project
-</a>
-
-    </div>
-  
-    <div style="background: #161b22; padding: 20px; border-radius: 10px;">
-  <h3 style="color: #58a6ff;"><i class="fas fa-shopping-cart"></i> 3-Tier Java eCommerce</h3>
-  <p>Java-based eCommerce web app with frontend, backend, and MySQL DB on AWS using CI/CD and EC2 deployment.</p>
-  <a href="https://github.com/santosh8359/3-tier-ecommerce-java" target="_blank" style="color: #f43f5e;">
-    <i class="fab fa-github"></i> View Project
-  </a>
-</div>
-
-</section>
-<form action="https://formspree.io/f/mqableeg" method="POST" style="max-width: 400px; margin-top: 30px;">
-  <label style="color:white;">Name</label><br>
-  <input type="text" name="name" required style="width: 100%; padding: 10px; margin-bottom: 10px;"><br>
-
-  <label style="color:white;">Email</label><br>
-  <input type="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 10px;"><br>
-
-  <label style="color:white;">Message</label><br>
-  <textarea name="message" rows="5" required style="width: 100%; padding: 10px; margin-bottom: 10px;"></textarea><br>
-
-  <button type="submit" class="btn">Send Message</button>
-</form>
-
-
-  <footer>
-    &copy; 2025 Biswaranjan Bal. All rights reserved.
-  </footer>
-<!-- Particles background -->
-<div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: -1;"></div>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-  particlesJS("particles-js", {
-    "particles": {
-      "number": {
-        "value": 60
-      },
-      "size": {
-        "value": 3
-      },
-      "color": {
-        "value": "#ffffff"
-      },
-      "line_linked": {
-        "enable": true,
-        "distance": 150,
-        "color": "#ffffff",
-        "opacity": 0.4,
-        "width": 1
-      },
-      "move": {
-        "enable": true,
-        "speed": 2
-      }
-    },
-    "interactivity": {
-      "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "grab"
-        }
-      }
-    }
-  });
-</script>
-
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <form action="https://formspree.io/f/mqableeg" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </div>
 </body>
 </html>
 
